@@ -1,10 +1,21 @@
 radio.setGroup(1)
 radio.setTransmitPower(2)
-let id = 1
-basic.showNumber(id)
-basic.pause(2000)
-basic.clearScreen()
+led.setBrightness(10)
 basic.forever(function () {
-    radio.sendNumber(id)
-    basic.pause(500)
+    radio.sendNumber(1)
+    basic.showLeds(`
+        . . . . .
+        . # # # .
+        . # # # .
+        . # # # .
+        . . . . .
+        `)
+    basic.showLeds(`
+        . . . . .
+        . . . . .
+        . . # . .
+        . . . . .
+        . . . . .
+        `)
+    basic.pause(200)
 })
